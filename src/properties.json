@@ -1,0 +1,123 @@
+{
+	"properties": [
+        {
+            "id":"prop1",
+			"type":"House",
+            "bedrooms":3,
+			"price":750000,
+			"tenure":"Freehold",
+			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory.",
+			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
+			"picture":"images/prop1.jpg",
+            "images": ["images/prop1.jpg", "images/prop1_2.jpg", "images/prop1_3.jpg", "images/prop1_4.jpg", "images/prop1_5.jpg", "images/prop1_6.jpg"],
+			"url":"properties/prop1.html",
+            "added": {
+                "month":"October",
+                "day":12,
+                "year":2022
+            }
+        },
+		{
+            "id":"prop2",
+			"type":"Flat",
+            "bedrooms":2,
+			"price":399995,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine.",
+			"location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2.jpg",
+            "images": ["images/prop2.jpg", "images/prop2_2.jpg", "images/prop2_3.jpg", "images/prop2_4.jpg", "images/prop2_5.jpg", "images/prop2_6.jpg"],
+			"url":"properties/prop2.html",
+            "added": {
+                "month":"September",
+                "day":14,
+                "year":2022
+            }
+        },
+        {
+            "id": "prop3",
+            "type": "House",
+            "bedrooms": 5,
+            "price": 1500000,
+            "tenure": "Freehold",
+            "description": "A stunning five-bedroom detached Victorian property sitting on a generous plot. This luxurious home features a grand entrance hall, three reception rooms with original fireplaces, and a vast open-plan kitchen/diner leading to a landscaped garden. Includes a double garage and carriage driveway.",
+            "location": "Chislehurst Road, Chislehurst BR7",
+            "picture": "images/prop3.jpg",
+            "images": ["images/prop3.jpg", "images/prop3_2.jpg", "images/prop3_3.jpg", "images/prop3_4.jpg", "images/prop3_5.jpg", "images/prop3_6.jpg"],
+            "url": "properties/prop3.html",
+            "added": {
+                "month": "January",
+                "day": 20,
+                "year": 2023
+            }
+        },
+        {
+            "id": "prop4",
+            "type": "Flat",
+            "bedrooms": 1,
+            "price": 275000,
+            "tenure": "Leasehold",
+            "description": "A perfect first-time buy, this modern one-bedroom apartment is located moments from the high street. Features include a bright open-plan living area with Juliet balcony, a contemporary bathroom suite, and secure underground parking. Excellent transport links nearby.",
+            "location": "High Street, Bromley BR1",
+            "picture": "images/prop4.jpg",
+            "images": ["images/prop4.jpg", "images/prop4_2.jpg", "images/prop4_3.jpg", "images/prop4_4.jpg", "images/prop4_5.jpg", "images/prop4_6.jpg"],
+            "url": "properties/prop4.html",
+            "added": {
+                "month": "March",
+                "day": 10,
+                "year": 2023
+            }
+        },
+        {
+            "id": "prop5",
+            "type": "House",
+            "bedrooms": 4,
+            "price": 650000,
+            "tenure": "Freehold",
+            "description": "Ideally located for local schools, this extended four-bedroom semi-detached home offers flexible living accommodation. Benefits from a large loft conversion with en-suite, a south-facing rear garden, and a utility room. Recently renovated to a high standard.",
+            "location": "Sevenoaks Way, Orpington BR5",
+            "picture": "images/prop5.jpg",
+            "images": ["images/prop5.jpg", "images/prop5_2.jpg", "images/prop5_3.jpg", "images/prop5_4.jpg", "images/prop5_5.jpg", "images/prop5_6.jpg"],
+            "url": "properties/prop5.html",
+            "added": {
+                "month": "May",
+                "day": 5,
+                "year": 2023
+            }
+        },
+        {
+            "id": "prop6",
+            "type": "Flat",
+            "bedrooms": 2,
+            "price": 425000,
+            "tenure": "Leasehold",
+            "description": "Spacious two-bedroom penthouse apartment with panoramic views. The property boasts a wrap-around terrace, master bedroom with walk-in wardrobe and en-suite, and concierge service. Located within walking distance of train stations and parks.",
+            "location": "Copers Cope Road, Beckenham BR3",
+            "picture": "images/prop6.jpg",
+            "images": ["images/prop6.jpg", "images/prop6_2.jpg", "images/prop6_3.jpg", "images/prop6_4.jpg", "images/prop6_5.jpg", "images/prop6_6.jpg"],
+            "url": "properties/prop6.html",
+            "added": {
+                "month": "July",
+                "day": 15,
+                "year": 2023
+            }
+        },
+        {
+            "id": "prop7",
+            "type": "House",
+            "bedrooms": 3,
+            "price": 550000,
+            "tenure": "Freehold",
+            "description": "Charming 1930s terrace house offering great potential for extension (STPP). Features two separate reception rooms, a galley kitchen, and a 80ft rear garden. Requires some modernization but retains lovely original features including stained glass windows.",
+            "location": "Main Road, Sidcup DA14",
+            "picture": "images/prop7.jpg",
+            "images": ["images/prop7.jpg", "images/prop7_2.jpg", "images/prop7_3.jpg", "images/prop7_4.jpg", "images/prop7_5.jpg", "images/prop7_6.jpg"],
+            "url": "properties/prop7.html",
+            "added": {
+                "month": "August",
+                "day": 22,
+                "year": 2023
+            }
+        }
+    ]
+}
