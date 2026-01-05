@@ -3,16 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchPage from './components/SearchPage';
 import PropertyPage from './components/PropertyPage';
 import NavBar from './components/NavBar';
-import propertyData from './properties.json'; // Make sure this matches your file name
+import propertyData from './properties.json'; 
 import './App.css';
 
 function App() {
   // STATE: This holds the list of favorite properties. 
-  // We keep it here (at the top level) so it persists across pages.
   const [favorites, setFavorites] = useState([]);
 
   // LOGIC: Add to favorites
-  // Requirement: Ensure each property can only be added once 
   const addToFavorites = (property) => {
     const isAlreadyFavorite = favorites.some(fav => fav.id === property.id);
     
@@ -25,26 +23,29 @@ function App() {
   };
 
   // LOGIC: Remove from favorites
-  // Requirement: Remove a property from the favorite list [cite: 48]
   const removeFromFavorites = (propertyId) => {
     const updatedFavorites = favorites.filter(fav => fav.id !== propertyId);
     setFavorites(updatedFavorites);
   };
 
   // LOGIC: Clear all favorites
-  // Requirement: Clear the favorite list [cite: 48]
   const clearFavorites = () => {
     setFavorites([]);
   };
 
   return (
-    <BrowserRouter>
+    // 👇 FIX APPLIED HERE: Added the future flags object
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
       {/* The NavBar is outside Routes so it shows on EVERY page */}
       <NavBar />
 
       <Routes>
         {/* Route 1: The Search Page (Home) */}
-        {/* We pass the 'properties' data and all favorite functions down as props */}
         <Route 
           path="/" 
           element={
@@ -59,7 +60,6 @@ function App() {
         />
 
         {/* Route 2: The Property Details Page */}
-        {/* The ':id' is a variable we can read inside PropertyPage to know which house to show */}
         <Route 
           path="/property/:id" 
           element={
@@ -75,10 +75,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
