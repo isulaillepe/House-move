@@ -57,8 +57,7 @@
                 "/images/prop3/image3.jpg",
                 "/images/prop3/image4.jpg",
                 "/images/prop3/image5.jpg",
-                "/images/prop3/image6.jpg",
-                "/images/prop3/image7.jpg"
+                "/images/prop3/image6.jpg"
             ],
             "url": "/property/prop3",
             "added": { "month": "January", "day": 4, "year": 2026 }
