@@ -35,7 +35,8 @@
                 "/images/prop2/image2.jpg",
                 "/images/prop2/image3.jpg",
                 "/images/prop2/image4.jpg",
-                "/images/prop2/image5.jpg"
+                "/images/prop2/image5.jpg",
+                "/images/prop2/image6.jpg"
             ],
             "url": "/property/prop2",
             "added": { "month": "December", "day": 29, "year": 2025 }
@@ -55,7 +56,9 @@
                 "/images/prop3/image2.jpg",
                 "/images/prop3/image3.jpg",
                 "/images/prop3/image4.jpg",
-                "/images/prop3/image5.jpg"
+                "/images/prop3/image5.jpg",
+                "/images/prop3/image6.jpg",
+                "/images/prop3/image7.jpg"
             ],
             "url": "/property/prop3",
             "added": { "month": "January", "day": 4, "year": 2026 }
@@ -75,7 +78,10 @@
                 "/images/prop4/image2.jpg",
                 "/images/prop4/image3.jpg",
                 "/images/prop4/image4.jpg",
-                "/images/prop4/image5.jpg"
+                "/images/prop4/image5.jpg",
+                "/images/prop4/image6.jpg",
+                "/images/prop4/image7.jpg",
+                "/images/prop4/image8.jpg"
             ],
             "url": "/property/prop4",
             "added": { "month": "January", "day": 4, "year": 2026 }
@@ -95,7 +101,10 @@
                 "/images/prop5/image2.jpg",
                 "/images/prop5/image3.jpg",
                 "/images/prop5/image4.jpg",
-                "/images/prop5/image5.jpg"
+                "/images/prop5/image5.jpg",
+                "/images/prop5/image6.jpg",
+                "/images/prop5/image7.jpg",
+                "/images/prop5/image8.jpg"
             ],
             "url": "/property/prop5",
             "added": { "month": "January", "day": 4, "year": 2026 }
@@ -115,7 +124,10 @@
                 "/images/prop6/image2.jpg",
                 "/images/prop6/image3.jpg",
                 "/images/prop6/image4.jpg",
-                "/images/prop6/image5.jpg"
+                "/images/prop6/image5.jpg",
+                "/images/prop6/image6.jpg",
+                "/images/prop6/image7.jpg",
+                "/images/prop6/image8.jpg"
             ],
             "url": "/property/prop6",
             "added": { "month": "January", "day": 3, "year": 2026 }
@@ -135,7 +147,9 @@
                 "/images/prop7/image2.jpg",
                 "/images/prop7/image3.jpg",
                 "/images/prop7/image4.jpg",
-                "/images/prop7/image5.jpg"
+                "/images/prop7/image5.jpg",
+                "/images/prop7/image6.jpg",
+                "/images/prop7/image7.jpg"
             ],
             "url": "/property/prop7",
             "added": { "month": "January", "day": 4, "year": 2026 }
@@ -155,7 +169,10 @@
                 "/images/prop8/image2.jpg",
                 "/images/prop8/image3.jpg",
                 "/images/prop8/image4.jpg",
-                "/images/prop8/image5.jpg"
+                "/images/prop8/image5.jpg",
+                "/images/prop8/image8.jpg",
+                "/images/prop8/image7.jpg",
+                "/images/prop8/image8.jpg"
             ],
             "url": "/property/prop8",
             "added": { "month": "January", "day": 3, "year": 2026 }
