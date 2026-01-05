@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// 👇 CHANGE 1: Import HashRouter instead of BrowserRouter
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import SearchPage from './components/SearchPage';
 import PropertyPage from './components/PropertyPage';
 import NavBar from './components/NavBar';
@@ -7,13 +8,10 @@ import propertyData from './properties.json';
 import './App.css';
 
 function App() {
-  // STATE: This holds the list of favorite properties. 
   const [favorites, setFavorites] = useState([]);
 
-  // LOGIC: Add to favorites
   const addToFavorites = (property) => {
     const isAlreadyFavorite = favorites.some(fav => fav.id === property.id);
-    
     if (!isAlreadyFavorite) {
       setFavorites([...favorites, property]);
       alert(`${property.location} added to favorites!`);
@@ -22,30 +20,21 @@ function App() {
     }
   };
 
-  // LOGIC: Remove from favorites
   const removeFromFavorites = (propertyId) => {
     const updatedFavorites = favorites.filter(fav => fav.id !== propertyId);
     setFavorites(updatedFavorites);
   };
 
-  // LOGIC: Clear all favorites
   const clearFavorites = () => {
     setFavorites([]);
   };
 
   return (
-    // 👇 FIX APPLIED HERE: Added the future flags object
-    <BrowserRouter
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
-      {/* The NavBar is outside Routes so it shows on EVERY page */}
+    // 👇 CHANGE 2: Use <HashRouter> here.
+    // It automatically handles the "/House-move/" folder for you.
+    <HashRouter>
       <NavBar />
-
       <Routes>
-        {/* Route 1: The Search Page (Home) */}
         <Route 
           path="/" 
           element={
@@ -58,8 +47,6 @@ function App() {
             />
           } 
         />
-
-        {/* Route 2: The Property Details Page */}
         <Route 
           path="/property/:id" 
           element={
@@ -70,7 +57,7 @@ function App() {
           } 
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
