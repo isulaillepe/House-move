@@ -1,123 +1,164 @@
 {
-	"properties": [
+    "properties": [
         {
-            "id":"prop1",
-			"type":"House",
-            "bedrooms":3,
-			"price":750000,
-			"tenure":"Freehold",
-			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory.",
-			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
-			"picture":"images/prop1.jpg",
-            "images": ["images/prop1.jpg", "images/prop1_2.jpg", "images/prop1_3.jpg", "images/prop1_4.jpg", "images/prop1_5.jpg", "images/prop1_6.jpg"],
-			"url":"properties/prop1.html",
-            "added": {
-                "month":"October",
-                "day":12,
-                "year":2022
-            }
+            "id": "prop1",
+            "type": "House",
+            "bedrooms": 4,
+            "price": 39000000,
+            "tenure": "Freehold",
+            "description": "Modern 3-Story Luxury Home with Rooftop located at the Hokandara/Thalawathugoda border. This 3,100 sqft home on 6 perches features 4 spacious bedrooms, 3 bathrooms with hot water, and a scenic rooftop terrace ideal for entertainment. Includes a modern pantry, fully tiled interiors, and secure roller gate access.",
+            "location": "Ramanayaka Road, Thalawathugoda, Colombo",
+            "picture": "/images/prop1/image1.jpg",
+            "floorPlan": "/images/prop1/floorplan.jpg",
+            "images": [
+                "/images/prop1/image1.jpg",
+                "/images/prop1/image2.jpg",
+                "/images/prop1/image3.jpg",
+                "/images/prop1/image4.jpg",
+                "/images/prop1/image5.jpg"
+            ],
+            "url": "/property/prop1",
+            "added": { "month": "January", "day": 4, "year": 2026 }
         },
-		{
-            "id":"prop2",
-			"type":"Flat",
-            "bedrooms":2,
-			"price":399995,
-			"tenure":"Freehold",
-			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine.",
-			"location":"Crofton Road Orpington BR6",
-			"picture":"images/prop2.jpg",
-            "images": ["images/prop2.jpg", "images/prop2_2.jpg", "images/prop2_3.jpg", "images/prop2_4.jpg", "images/prop2_5.jpg", "images/prop2_6.jpg"],
-			"url":"properties/prop2.html",
-            "added": {
-                "month":"September",
-                "day":14,
-                "year":2022
-            }
+        {
+            "id": "prop2",
+            "type": "House",
+            "bedrooms": 4,
+            "price": 41500000,
+            "tenure": "Freehold",
+            "description": "Brand new luxury house in Naranwala, Udupila. Built on 32.5 perches of land, this 2,055 sqft property features 4 bedrooms (Master with A/C), 2 modern bathrooms, and a separate servant's room. Includes full CCTV coverage, roller-doored garage, and a lush garden with coconut trees.",
+            "location": "Naranwala, Gampaha",
+            "picture": "/images/prop2/image1.jpg",
+            "floorPlan": "/images/prop2/floorplan.jpg",
+            "images": [
+                "/images/prop2/image1.jpg",
+                "/images/prop2/image2.jpg",
+                "/images/prop2/image3.jpg",
+                "/images/prop2/image4.jpg",
+                "/images/prop2/image5.jpg"
+            ],
+            "url": "/property/prop2",
+            "added": { "month": "December", "day": 29, "year": 2025 }
         },
         {
             "id": "prop3",
             "type": "House",
-            "bedrooms": 5,
-            "price": 1500000,
+            "bedrooms": 4,
+            "price": 29700000,
             "tenure": "Freehold",
-            "description": "A stunning five-bedroom detached Victorian property sitting on a generous plot. This luxurious home features a grand entrance hall, three reception rooms with original fireplaces, and a vast open-plan kitchen/diner leading to a landscaped garden. Includes a double garage and carriage driveway.",
-            "location": "Chislehurst Road, Chislehurst BR7",
-            "picture": "images/prop3.jpg",
-            "images": ["images/prop3.jpg", "images/prop3_2.jpg", "images/prop3_3.jpg", "images/prop3_4.jpg", "images/prop3_5.jpg", "images/prop3_6.jpg"],
-            "url": "properties/prop3.html",
-            "added": {
-                "month": "January",
-                "day": 20,
-                "year": 2023
-            }
+            "description": "Charming dream home in Yakkala (S10). A spacious 2,030 sqft house on 6.6 perches. Features 4 luxurious bedrooms, 3 modern bathrooms, a double car porch, and a gorgeous roof terrace. Located just 2 minutes from the Colombo-Kandy road and Lyceum International School.",
+            "location": "Yakkala, Gampaha",
+            "picture": "/images/prop3/image1.jpg",
+            "floorPlan": "/images/prop3/floorplan.jpg",
+            "images": [
+                "/images/prop3/image1.jpg",
+                "/images/prop3/image2.jpg",
+                "/images/prop3/image3.jpg",
+                "/images/prop3/image4.jpg",
+                "/images/prop3/image5.jpg"
+            ],
+            "url": "/property/prop3",
+            "added": { "month": "January", "day": 4, "year": 2026 }
         },
         {
             "id": "prop4",
-            "type": "Flat",
-            "bedrooms": 1,
-            "price": 275000,
-            "tenure": "Leasehold",
-            "description": "A perfect first-time buy, this modern one-bedroom apartment is located moments from the high street. Features include a bright open-plan living area with Juliet balcony, a contemporary bathroom suite, and secure underground parking. Excellent transport links nearby.",
-            "location": "High Street, Bromley BR1",
-            "picture": "images/prop4.jpg",
-            "images": ["images/prop4.jpg", "images/prop4_2.jpg", "images/prop4_3.jpg", "images/prop4_4.jpg", "images/prop4_5.jpg", "images/prop4_6.jpg"],
-            "url": "properties/prop4.html",
-            "added": {
-                "month": "March",
-                "day": 10,
-                "year": 2023
-            }
+            "type": "House",
+            "bedrooms": 5,
+            "price": 80000000,
+            "tenure": "Freehold",
+            "description": "Architecturally designed 2-story house in Ethulkotte (AF525). Situated on 17 perches, this 3,000 sqft residence offers 5 spacious bedrooms, 4 bathrooms (with solar hot water), and a landscaped garden. Features a large master suite with balcony, timber doors, and parking for 2 vehicles.",
+            "location": "Ethulkotte, Colombo",
+            "picture": "/images/prop4/image1.jpg",
+            "floorPlan": "/images/prop4/floorplan.jpg",
+            "images": [
+                "/images/prop4/image1.jpg",
+                "/images/prop4/image2.jpg",
+                "/images/prop4/image3.jpg",
+                "/images/prop4/image4.jpg",
+                "/images/prop4/image5.jpg"
+            ],
+            "url": "/property/prop4",
+            "added": { "month": "January", "day": 4, "year": 2026 }
         },
         {
             "id": "prop5",
             "type": "House",
             "bedrooms": 4,
-            "price": 650000,
+            "price": 76000000,
             "tenure": "Freehold",
-            "description": "Ideally located for local schools, this extended four-bedroom semi-detached home offers flexible living accommodation. Benefits from a large loft conversion with en-suite, a south-facing rear garden, and a utility room. Recently renovated to a high standard.",
-            "location": "Sevenoaks Way, Orpington BR5",
-            "picture": "images/prop5.jpg",
-            "images": ["images/prop5.jpg", "images/prop5_2.jpg", "images/prop5_3.jpg", "images/prop5_4.jpg", "images/prop5_5.jpg", "images/prop5_6.jpg"],
-            "url": "properties/prop5.html",
-            "added": {
-                "month": "May",
-                "day": 5,
-                "year": 2023
-            }
+            "description": "Fully furnished luxury house at Melder Place, Nugegoda (AF519). This 2,000 sqft home on 7.2 perches includes 4 bedrooms, 3 bathrooms, and a 5kW solar electricity system. Comes fully air-conditioned with modern furniture, CCTV, and a pantry with fitted cupboards.",
+            "location": "Melder Place, Nugegoda, Colombo",
+            "picture": "/images/prop5/image1.jpg",
+            "floorPlan": "/images/prop5/floorplan.jpg",
+            "images": [
+                "/images/prop5/image1.jpg",
+                "/images/prop5/image2.jpg",
+                "/images/prop5/image3.jpg",
+                "/images/prop5/image4.jpg",
+                "/images/prop5/image5.jpg"
+            ],
+            "url": "/property/prop5",
+            "added": { "month": "January", "day": 4, "year": 2026 }
         },
         {
             "id": "prop6",
-            "type": "Flat",
-            "bedrooms": 2,
-            "price": 425000,
-            "tenure": "Leasehold",
-            "description": "Spacious two-bedroom penthouse apartment with panoramic views. The property boasts a wrap-around terrace, master bedroom with walk-in wardrobe and en-suite, and concierge service. Located within walking distance of train stations and parks.",
-            "location": "Copers Cope Road, Beckenham BR3",
-            "picture": "images/prop6.jpg",
-            "images": ["images/prop6.jpg", "images/prop6_2.jpg", "images/prop6_3.jpg", "images/prop6_4.jpg", "images/prop6_5.jpg", "images/prop6_6.jpg"],
-            "url": "properties/prop6.html",
-            "added": {
-                "month": "July",
-                "day": 15,
-                "year": 2023
-            }
+            "type": "House",
+            "bedrooms": 3,
+            "price": 25500000,
+            "tenure": "Freehold",
+            "description": "Brand new solid modern house in Dalupatha, Negombo. 1,500 sqft living space on 10 perches. Features 3 bedrooms, 2 luxury bathrooms, a modern pantry kitchen, and a rolling gate. Located in a safe residential area just 3.6km from Negombo town and the beach.",
+            "location": "Dalupatha, Negombo, Gampaha",
+            "picture": "/images/prop6/image1.jpg",
+            "floorPlan": "/images/prop6/floorplan.jpg",
+            "images": [
+                "/images/prop6/image1.jpg",
+                "/images/prop6/image2.jpg",
+                "/images/prop6/image3.jpg",
+                "/images/prop6/image4.jpg",
+                "/images/prop6/image5.jpg"
+            ],
+            "url": "/property/prop6",
+            "added": { "month": "January", "day": 3, "year": 2026 }
         },
         {
             "id": "prop7",
             "type": "House",
             "bedrooms": 3,
-            "price": 550000,
+            "price": 51000000,
             "tenure": "Freehold",
-            "description": "Charming 1930s terrace house offering great potential for extension (STPP). Features two separate reception rooms, a galley kitchen, and a 80ft rear garden. Requires some modernization but retains lovely original features including stained glass windows.",
-            "location": "Main Road, Sidcup DA14",
-            "picture": "images/prop7.jpg",
-            "images": ["images/prop7.jpg", "images/prop7_2.jpg", "images/prop7_3.jpg", "images/prop7_4.jpg", "images/prop7_5.jpg", "images/prop7_6.jpg"],
-            "url": "properties/prop7.html",
-            "added": {
-                "month": "August",
-                "day": 22,
-                "year": 2023
-            }
+            "description": "Prime house for sale in Pelawatte, Battaramulla. 8 perches of land with a 2,160 sqft house. Includes 3 air-conditioned bedrooms, 3 washrooms with Rocell fittings, and two garden spaces (front & back). perfectly located next to Army Headquarters and 500m from Pelawatte junction.",
+            "location": "Pelawatte, Battaramulla, Colombo",
+            "picture": "/images/prop7/image1.jpg",
+            "floorPlan": "/images/prop7/floorplan.jpg",
+            "images": [
+                "/images/prop7/image1.jpg",
+                "/images/prop7/image2.jpg",
+                "/images/prop7/image3.jpg",
+                "/images/prop7/image4.jpg",
+                "/images/prop7/image5.jpg"
+            ],
+            "url": "/property/prop7",
+            "added": { "month": "January", "day": 4, "year": 2026 }
+        },
+        {
+            "id": "prop8",
+            "type": "Villa",
+            "bedrooms": 2,
+            "price": 32500000,
+            "tenure": "Freehold",
+            "description": "Charming villa near Talpe Beach, Galle. Situated on 9.5 perches, this 840 sqft property features 2 bedrooms with attached bathrooms (A/C included), a modern kitchen, and a landscaped garden. Just 450m to the famous Talpe beach and rock pools.",
+            "location": "Talpe, Galle",
+            "picture": "/images/prop8/image1.jpg",
+            "floorPlan": "/images/prop8/floorplan.jpg",
+            "images": [
+                "/images/prop8/image1.jpg",
+                "/images/prop8/image2.jpg",
+                "/images/prop8/image3.jpg",
+                "/images/prop8/image4.jpg",
+                "/images/prop8/image5.jpg"
+            ],
+            "url": "/property/prop8",
+            "added": { "month": "January", "day": 3, "year": 2026 }
         }
     ]
 }
