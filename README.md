@@ -30,4 +30,17 @@ A responsive Single Page Application (SPA) for browsing and saving real estate p
 3.  Start the development server:
     ```bash
     npm run dev
+
+## 📂 System BluePrint
+
+A look at how the application logic is compartmentalized:
+
+```bash
+src/
+├── 🧩 components/      # Lego blocks (PropertyCard, SearchWidget, DropZone)
+├── ⚡ context/         # The brain (Global State & Reducers)
+├── 💾 data/            # Static JSON feed (Property Mock Data)
+├── 📄 pages/           # Route Views (SearchPage, PropertyDetails)
+├── 🎨 index.css        # The skin (CSS Variables & Media Queries)
+└── 🛠️ utils.js         # Helper logic (Currency formatters, Date parsers)
     ```
