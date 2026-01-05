@@ -1,80 +1,174 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 function PropertyPage({ properties, addToFavorites }) {
   const { id } = useParams();
+  
+  // 1. Find the property
+  const property = properties.find(p => String(p.id) === String(id));
 
-  // 🔍 DEBUG: Check the console to see what is being compared
-  console.log("URL ID:", id);
-  console.log("First Property ID in Data:", properties[0]?.id);
+  // 2. STATE: Track which image is currently big (The "Main" one)
+  const [selectedImage, setSelectedImage] = useState("");
 
-  // FIX: specific for "prop1" style IDs. We do NOT use Number() here.
-  const property = properties.find(p => p.id === id);
+  // 3. EFFECT: When the page loads, make the first image the main one
+  useEffect(() => {
+    // Safety check: specific for your case where some props have 5 images, some have 8
+    if (property && property.images && property.images.length > 0) {
+      setSelectedImage(property.images[0]);
+    }
+  }, [property]);
 
   if (!property) {
     return (
       <div style={{ textAlign: 'center', padding: '50px' }}>
         <h2>Property not found!</h2>
-        <p>Looking for ID: <strong>{id}</strong></p>
-        <Link to="/" style={{ color: '#2c3e50', textDecoration: 'underline' }}>
-          Return to Home Page
-        </Link>
+        <Link to="/">Back to Home</Link>
       </div>
     );
   }
 
   return (
-    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+    <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
       
-      <Link to="/" style={{ textDecoration: 'none', color: '#666', fontSize: '0.9rem' }}>
+      {/* Navigation */}
+      <Link to="/" style={{ textDecoration: 'none', color: '#666', marginBottom: '15px', display: 'inline-block' }}>
         ← Back to Search
       </Link>
 
-      <div style={{ marginTop: '20px' }}>
-        <h1 style={{ color: '#2c3e50' }}>{property.location}</h1>
-        <h2 style={{ color: '#27ae60' }}>{property.price}</h2>
+      {/* Title & Price */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <div>
+          <h1 style={{ color: '#2c3e50', margin: 0 }}>{property.location}</h1>
+          <p style={{ margin: '5px 0', color: '#7f8c8d' }}>{property.type} • {property.tenure}</p>
+        </div>
+        <h2 style={{ color: '#27ae60', margin: 0 }}>LKR {property.price.toLocaleString()}</h2>
       </div>
 
-      <div style={{ marginTop: '20px' }}>
-        <img 
-          src={property.picture} 
-          alt={property.type} 
-          style={{ 
-            width: '100%', 
-            maxHeight: '400px', 
-            objectFit: 'cover', 
-            borderRadius: '8px', 
-            boxShadow: '0 4px 6px rgba(0,0,0,0.1)' 
-          }} 
-        />
-      </div>
-
-      <div style={{ marginTop: '20px', padding: '20px', background: '#f8f9fa', borderRadius: '8px' }}>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-          {property.description}
-        </p>
+      {/* 📸 GALLERY SECTION */}
+      <div className="gallery-container">
         
-        <div style={{ display: 'flex', gap: '20px', marginTop: '15px', color: '#555' }}>
-          <span><strong>🏠 Type:</strong> {property.type}</span>
-          <span><strong>🛏️ Bedrooms:</strong> {property.bedrooms}</span>
+        {/* A. The Main Large Image */}
+        <div style={{ 
+            width: '100%', 
+            height: '500px', 
+            backgroundColor: '#f1f1f1', 
+            borderRadius: '10px', 
+            overflow: 'hidden', 
+            marginBottom: '15px',
+            boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+        }}>
+            <img 
+                src={selectedImage} 
+                alt="Main View" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                onError={(e) => e.target.src = "https://placehold.co/800x600?text=No+Image"}
+            />
         </div>
 
-        <button 
-          onClick={() => addToFavorites(property)}
-          style={{
-            marginTop: '25px',
-            padding: '12px 24px',
-            background: '#2ecc71',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            fontSize: '1rem',
-            cursor: 'pointer'
-          }}
-        >
-          ❤️ Add to Favorites
-        </button>
+        {/* B. The Thumbnail Menu */}
+        {/* 'overflowX: auto' handles your 5 vs 8 photos requirement automatically */}
+        <div style={{ 
+            display: 'flex', 
+            gap: '12px', 
+            overflowX: 'auto', 
+            paddingBottom: '10px',
+            scrollbarWidth: 'thin' // Makes scrollbar thinner on Firefox
+        }}>
+            {/* The '?' checks if images exist before trying to map them */}
+            {property.images && property.images.map((img, index) => (
+                <img 
+                    key={index}
+                    src={img}
+                    alt={`Preview ${index}`}
+                    onClick={() => setSelectedImage(img)}
+                    style={{ 
+                        minWidth: '100px', // Ensures images don't shrink too much
+                        height: '80px', 
+                        objectFit: 'cover', 
+                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        border: selectedImage === img ? '3px solid #3498db' : '2px solid transparent',
+                        opacity: selectedImage === img ? 1 : 0.6,
+                        transition: 'all 0.2s ease'
+                    }}
+                />
+            ))}
+        </div>
       </div>
+      {/* ------------------------------------------- */}
+
+      {/* Tabs Section */}
+      <div style={{ marginTop: '30px' }}>
+        <Tabs>
+          <TabList>
+            <Tab>Description</Tab>
+            <Tab>Floor Plan</Tab>
+            <Tab>Map</Tab>
+          </TabList>
+
+          <TabPanel>
+            <div style={{ padding: '20px', background: '#f8f9fa', borderRadius: '8px', lineHeight: '1.6' }}>
+              <p>{property.description}</p>
+              <div style={{ marginTop: '20px', display: 'flex', gap: '30px', fontWeight: 'bold', color: '#555' }}>
+                  <span>🛏️ {property.bedrooms} Bedrooms</span>
+                  <span>📅 Added: {property.added.month} {property.added.year}</span>
+              </div>
+            </div>
+          </TabPanel>
+
+          <TabPanel>
+            <div style={{ textAlign: 'center', padding: '20px', background: '#fff', border: '1px solid #eee' }}>
+              <img 
+                src={property.floorPlan} 
+                alt="Floor Plan" 
+                style={{ maxWidth: '100%', maxHeight: '500px' }}
+                onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentNode.innerHTML = "No Floor Plan Available";
+                }}
+              />
+            </div>
+          </TabPanel>
+
+          <TabPanel>
+             <div style={{ height: '400px', width: '100%', background: '#eee', borderRadius: '8px', overflow: 'hidden' }}>
+              {/* Fixed the map URL to ensure it works properly */}
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&output=embed`}
+              ></iframe>
+            </div>
+          </TabPanel>
+        </Tabs>
+      </div>
+
+      {/* Add to Favorites Button */}
+      <button 
+        onClick={() => addToFavorites(property)}
+        style={{
+          marginTop: '30px',
+          width: '100%',
+          padding: '16px',
+          background: '#e74c3c', 
+          color: 'white',
+          border: 'none',
+          borderRadius: '8px',
+          fontSize: '1.1rem',
+          fontWeight: 'bold',
+          cursor: 'pointer',
+          boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+        }}
+        onMouseOver={(e) => e.target.style.background = '#c0392b'}
+        onMouseOut={(e) => e.target.style.background = '#e74c3c'}
+      >
+        ❤️ Add to Favorites
+      </button>
     </div>
   );
 }
