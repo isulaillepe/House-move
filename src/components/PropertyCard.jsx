@@ -1,36 +1,41 @@
 import { Link } from 'react-router-dom';
-import './PropertyCard.css'; // We'll create this small CSS file next
+import './PropertyCard.css'; 
 
 function PropertyCard({ property, addToFavorites }) {
   
   // HANDLER: When the user starts dragging this card
   const handleDragStart = (e) => {
-    // We attach the property data (as a string) to the drag event
     e.dataTransfer.setData("application/json", JSON.stringify(property));
-    // Visual effect: indicates we are "copying" the item
     e.dataTransfer.effectAllowed = "copy";
   };
 
   return (
     <div 
       className="property-card"
-      draggable="true"             // 1. Make the element draggable
-      onDragStart={handleDragStart} // 2. Attach the data
+      draggable="true"             
+      onDragStart={handleDragStart} 
     >
-      <div className="card-image-container">
-        <img src={property.picture} alt={property.type} />
+      <div className="card-ximage-container">
+        {/* ✅ UPDATE: Uses the first image from the folder as the thumbnail */}
+        <img 
+          src={property.images[0]} 
+          alt={property.type} 
+          onError={(e) => { e.target.src = "https://placehold.co/600x400?text=No+Image"; }}
+        />
         <div className="status-tag">For Sale</div>
       </div>
       
       <div className="card-content">
         <h3>{property.location}</h3>
-        <p className="price">£{property.price.toLocaleString()}</p>
+        
+        {/* Currency set to LKR */}
+        <p className="price">LKR {property.price.toLocaleString()}</p>
+        
         <p className="desc">{property.description.substring(0, 80)}...</p>
         
         <div className="card-actions">
           <Link to={`/property/${property.id}`} className="view-btn">View Details</Link>
           
-          {/* REQUIREMENT: Button to add to favorites */}
           <button 
             className="fav-btn" 
             onClick={() => addToFavorites(property)}

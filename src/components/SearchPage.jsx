@@ -3,23 +3,22 @@ import PropertyCard from './PropertyCard';
 import FavoritesList from './FavoritesList';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import './SearchPage.css'; // We will add specific styles below
+import './SearchPage.css'; 
 
 function SearchPage({ properties, favorites, addToFavorites, removeFromFavorites, clearFavorites }) {
   // STATE: Search Filters
   const [filters, setFilters] = useState({
     type: 'any',
     minPrice: 0,
-    maxPrice: 2000000,
+    maxPrice: 200000000, // ✅ FIX 1: Increased to 200 Million for LKR prices
     minBedrooms: 0,
     maxBedrooms: 10,
     postcode: '',
-    dateAfter: null, // Date object from DatePicker
-    dateBefore: null // Date object from DatePicker
+    dateAfter: null, 
+    dateBefore: null 
   });
 
   // HELPER: Convert JSON date object to JS Date
-  // The JSON uses month names ("October"), so we map them to numbers (0-11)
   const getPropertyDate = (added) => {
     const months = {
       "January": 0, "February": 1, "March": 2, "April": 3, "May": 4, "June": 5,
@@ -29,13 +28,12 @@ function SearchPage({ properties, favorites, addToFavorites, removeFromFavorites
   };
 
   // LOGIC: The Master Filter
-  // This satisfies the requirement: "Search works flawlessly with any combination of criteria" [cite: 106]
   const filteredProperties = properties.filter(prop => {
     const propDate = getPropertyDate(prop.added);
     const filterDateAfter = filters.dateAfter;
     const filterDateBefore = filters.dateBefore;
 
-    // 1. Type Check
+    // 1. Type Check (Added Villa support)
     const typeMatch = filters.type === 'any' || prop.type === filters.type;
 
     // 2. Price Check (Min & Max)
@@ -44,11 +42,10 @@ function SearchPage({ properties, favorites, addToFavorites, removeFromFavorites
     // 3. Bedrooms Check (Min & Max)
     const bedroomsMatch = prop.bedrooms >= filters.minBedrooms && prop.bedrooms <= filters.maxBedrooms;
 
-    // 4. Postcode Check (Partial match, e.g., "BR5")
-    // We convert both to lowercase to make it case-insensitive
+    // 4. Postcode Check
     const postcodeMatch = filters.postcode === '' || prop.location.toLowerCase().includes(filters.postcode.toLowerCase());
 
-    // 5. Date Added Check (After & Between)
+    // 5. Date Added Check
     const dateAfterMatch = !filterDateAfter || propDate >= filterDateAfter;
     const dateBeforeMatch = !filterDateBefore || propDate <= filterDateBefore;
 
@@ -60,7 +57,7 @@ function SearchPage({ properties, favorites, addToFavorites, removeFromFavorites
     setFilters({
       type: 'any',
       minPrice: 0,
-      maxPrice: 2000000,
+      maxPrice: 200000000, // ✅ Resetting to 200 Million
       minBedrooms: 0,
       maxBedrooms: 10,
       postcode: '',
@@ -86,11 +83,12 @@ function SearchPage({ properties, favorites, addToFavorites, removeFromFavorites
             <option value="any">Any</option>
             <option value="House">House</option>
             <option value="Flat">Flat</option>
+            <option value="Villa">Villa</option> {/* ✅ FIX 2: Added Villa Option */}
           </select>
         </div>
 
         <div className="form-group">
-          <label>Price Range (£)</label>
+          <label>Price Range (LKR)</label> {/* ✅ FIX 3: Changed label to LKR */}
           <div className="dual-input">
             <input 
               type="number" 
@@ -129,14 +127,14 @@ function SearchPage({ properties, favorites, addToFavorites, removeFromFavorites
           <label>Postcode / Area</label>
           <input 
             type="text" 
-            placeholder="e.g. BR5, NW1" 
+            placeholder="e.g. Colombo, Galle" 
             value={filters.postcode}
             onChange={e => setFilters({...filters, postcode: e.target.value})}
             className="search-input"
           />
         </div>
 
-        {/* REACT WIDGET REQUIREMENT  */}
+        {/* REACT WIDGET REQUIREMENT */}
         <div className="form-group">
           <label>Date Added (Between)</label>
           <DatePicker 
@@ -156,7 +154,7 @@ function SearchPage({ properties, favorites, addToFavorites, removeFromFavorites
 
         <button onClick={clearFilters} className="clear-filters-btn">Reset Filters</button>
 
-        {/* SECTION 2: FAVORITES LIST (Displayed on Search Page [cite: 50]) */}
+        {/* SECTION 2: FAVORITES LIST */}
         <div className="desktop-favorites">
             <FavoritesList 
               favorites={favorites} 
